@@ -108,6 +108,8 @@ class Info(models.Model):
     fb_link = models.URLField( max_length=200)
     twitter_link = models.URLField( max_length=200)
     instagram_link = models.URLField( max_length=200)
+    githup_link = models.URLField(null=True, blank=True, max_length=200)
+    linkedin_link = models.URLField(null=True, blank=True, max_length=200)
 
     def __str__(self):
         return self.site_name
