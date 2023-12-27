@@ -1,5 +1,5 @@
 from django.contrib import admin
-from . models import About , Education ,Services , CategoryService ,Info,MySkills,CategorySkills , Summary , ProfessionalExperience , EXP
+from . models import About , Education ,Services , CategoryService ,Info,MySkills,CategorySkills , Summary , ProfessionalExperience , EXP , Contact
 
 # Register your models here.
 admin.site.register(About)
@@ -12,3 +12,4 @@ admin.site.register(CategorySkills)
 admin.site.register(Summary)
 admin.site.register(ProfessionalExperience)
 admin.site.register(EXP)
+admin.site.register(Contact)
