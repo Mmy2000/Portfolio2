@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+
+            <div class="d-flex justify-content-between align-items-center">
+                <h2>Blog Page</h2>
+                <ol>
+                    <li><a href="/">Home</a></li>
+                    <li>Blog Page</li>
+                </ol>
+            </div>
+
+        </div>
+    </section><!-- End Breadcrumbs -->
+
+    <section class="inner-page">
+        <div class="container">
+            <!-- ======= Testimonials Section ======= -->
+            {% for post in object_list %}
+            <div class="card" style="width: 18rem;">
+                <img src="{{post.image.url}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{post.title}}</h5>
+                    <p class="card-text">{{post.description|safe|truncatewords:10}}</p>
+                    <a href="{{post.get_absolute_url}}" class="btn btn-primary">View Blog</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+</main><!-- End #main -->
+
+
+{% endblock body%}
