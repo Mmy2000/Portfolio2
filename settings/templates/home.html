@@ -2,7 +2,7 @@
 {% load static %}
 {% block body %}
 <!-- ======= Hero Section ======= -->
-<section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+<section id="hero"   class="d-flex flex-column justify-content-center align-items-center">
   <div class="hero-container" data-aos="fade-in">
     <h1>{{about.username}}</h1>
     <p>I'm <span class="typed" data-typed-items="{{about.headline}}, Freelancer, Designer"></span></p>
@@ -22,7 +22,7 @@
 
       <div class="row">
         <div class="col-lg-4" data-aos="fade-right">
-          <img src="{% static 'assets/img/profile-img.jpg'%}" class="img-fluid" alt="">
+          <img src="{{about.image.url}}" class="img-fluid" alt="">
         </div>
         <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
           <h3>UI/UX Designer &amp; {{about.headline}}.</h3>
