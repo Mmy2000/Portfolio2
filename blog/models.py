@@ -15,6 +15,7 @@ class Post(models.Model):
     created_at = models.DateTimeField( ("created_at"),default=timezone.now)
     description = models.TextField(("description"),max_length=100000)
     slug = models.SlugField(null=True,blank=True)
+    category = models.ForeignKey('PostCategory',related_name='post_category',verbose_name=('category'),on_delete=models.CASCADE ,null=True,blank=True)
 
     def save(self,*args, **kwargs):
         if not self.slug:
@@ -30,3 +31,12 @@ class Post(models.Model):
 class PostImages(models.Model):
     post = models.ForeignKey(Post, related_name='post_image', on_delete=models.CASCADE)
     image = models.ImageField( upload_to='postImages')
+
+    def __str__(self):
+        return str(self.post.title)
+    
+class PostCategory(models.Model):
+    name = models.CharField(null=True,blank=True, max_length=50)
+
+    def __str__(self):
+        return self.name
