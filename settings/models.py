@@ -28,9 +28,10 @@ class About(models.Model):
         return str(self.username)
     
 
-class Resume(models.Model):
+class Education(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     year = models.CharField(max_length=50 , blank=True, null=True)
+    title = models.CharField(max_length=50 , blank=True, null=True)
     subject = models.CharField(max_length=100 , blank=True, null=True)
     university = models.CharField(max_length=100 , blank=True, null=True)
     description = models.TextField(max_length=100000)
@@ -38,6 +39,32 @@ class Resume(models.Model):
     def __str__(self):
         return str(self.user)
     
+class Summary(models.Model):
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
+    age = models.CharField(max_length=50 , blank=True, null=True)
+    email = models.CharField(max_length=50 , blank=True, null=True)
+    phone = models.CharField(max_length=100 , blank=True, null=True)
+    address = models.CharField(max_length=100 , blank=True, null=True)
+    description = models.TextField(blank=True, null=True , max_length=100000)
+
+    def __str__(self):
+        return str(self.user)
+    
+class  ProfessionalExperience(models.Model):
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
+    year = models.CharField(max_length=50 , blank=True, null=True)
+    title = models.CharField(max_length=50 , blank=True, null=True)
+    university = models.CharField(max_length=100 , blank=True, null=True)
+    
+    def __str__(self):
+        return str(self.user)
+    
+class EXP(models.Model):
+    exp = models.ForeignKey(ProfessionalExperience, related_name="exp", on_delete=models.CASCADE)
+    subject = models.CharField(max_length=100 , blank=True, null=True)
+
+    def __str__(self):
+        return str(self.exp)
 
 class Services(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
