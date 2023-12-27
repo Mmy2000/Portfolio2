@@ -7,10 +7,10 @@ from django.db.models.query_utils import Q
 
 def myfooter(request):
     myfooter = Info.objects.last()
-    about = About.objects.all()
+    about = About.objects.last()
     context = {
         'myfooter':myfooter , 
-        'about' : about,
+        'abouts' : about,
     }
     return context
 

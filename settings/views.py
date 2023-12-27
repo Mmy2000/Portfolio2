@@ -6,6 +6,7 @@ from django.views.generic import  ListView, DetailView
 from django.db.models.query_utils import Q
 from django.db.models import Count
 from blog.models import Post
+from projects.models import Projects
 
 # Create your views here.
 def home(request):
@@ -16,6 +17,7 @@ def home(request):
     posts = Post.objects.all()
     summary = Summary.objects.last()
     exp = ProfessionalExperience.objects.all()
+    projects = Projects.objects.all()
 
     return render(request,'home.html', {
         'about':about  , 
@@ -25,4 +27,5 @@ def home(request):
         'posts':posts,
         'summary':summary,
         'exp' : exp,
+        'projects':projects,
     })
