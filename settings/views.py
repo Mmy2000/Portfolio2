@@ -22,6 +22,8 @@ def home(request):
     summary = Summary.objects.last()
     exp = ProfessionalExperience.objects.all()
     projects = Projects.objects.all()
+    project_count = projects.count() 
+    awards = project_count+2
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid(): 
@@ -45,6 +47,8 @@ def home(request):
         'summary':summary,
         'exp' : exp,
         'projects':projects,
-        'form':form
+        'form':form,
+        'awards':awards,
+        'project_count':project_count
     })
 
