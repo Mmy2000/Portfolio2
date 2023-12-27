@@ -65,6 +65,7 @@ class Services(models.Model):
 
 class CategoryService(models.Model):
     name = models.CharField(max_length=60)
+    description = models.TextField(max_length=100000,null=True,blank=True)
     icons = models.CharField(max_length=30)
 
     def __str__(self):
