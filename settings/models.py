@@ -23,6 +23,7 @@ class About(models.Model):
     about = models.TextField(blank=True)
     age = models.IntegerField(null=True, blank=True)
     degree = models.CharField( max_length=50 ,blank=True, null=True)
+    views = models.IntegerField(default=0)
 
     def __str__(self):
         return str(self.username)

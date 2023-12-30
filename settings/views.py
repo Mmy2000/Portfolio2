@@ -24,6 +24,8 @@ def home(request):
     projects = Projects.objects.all()
     project_count = projects.count() 
     awards = project_count+2
+    about.views += 1
+    about.save()
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid(): 
