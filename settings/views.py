@@ -17,7 +17,7 @@ def home(request):
     about = About.objects.last()
     education = Education.objects.all()
     service = Services.objects.all()
-    skills = MySkills.objects.all()
+    skills = MySkills.objects.all().order_by('-percent')
     posts = Post.objects.all()
     summary = Summary.objects.last()
     exp = ProfessionalExperience.objects.all()
