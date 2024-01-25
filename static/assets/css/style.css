@@ -585,6 +585,24 @@ section {
   z-index: 2;
   opacity: 0;
 }
+.portfolio .portfolio-item .caption{
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  position: absolute;
+  z-index: 4;
+  transform: translateY(100%);
+  background-color: rgba(4, 11, 20,0);
+  transition: transform 0.4s ;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+.portfolio .portfolio-wrap:hover .caption {
+  transform: translateY(0%);
+}
 
 .portfolio .portfolio-wrap .portfolio-links {
   opacity: 1;
