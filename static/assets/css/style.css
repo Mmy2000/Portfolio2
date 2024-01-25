@@ -603,13 +603,15 @@ section {
 .portfolio .portfolio-wrap:hover .caption {
   transform: translateY(0%);
 }
-
+.portfolio .portfolio-item .caption a{
+  color: white;
+}
 .portfolio .portfolio-wrap .portfolio-links {
   opacity: 1;
   left: 0;
   right: 0;
   bottom: -60px;
-  z-index: 3;
+  z-index: 5;
   position: absolute;
   transition: all ease-in-out 0.3s;
   display: flex;
