@@ -49,7 +49,7 @@
                         <h3>Blog information</h3>
                         <ul>
                             <li><strong>Title</strong>: {{object.title}}</li>
-                            <li><strong>Auther</strong>: {{object.auther}}</li>
+                            <li><strong>Auther</strong>: {{object.auther.first_name}} {{object.auther.last_name}}</li>
                             <li><strong>Project date</strong>: {{object.created_at}}</li>
                             <li><strong>Categoryies</strong>:
                                 {% for category in categories %}
