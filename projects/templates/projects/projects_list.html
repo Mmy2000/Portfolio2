@@ -34,9 +34,9 @@
             <img src="{{project.image.url}}" class="img-fluid" alt="">
             <div class="caption"><a href="{{project.get_absolute_url}}"><h5>{{project.title}}</h5></a></div>
             <div class="portfolio-links">
-              <a href="{{project.url}}" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                title="App 1"><i class="bx bx-link"></i></a>
-              <a href="{{project.get_absolute_url}}" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="{{project.url}}" class="portfolio-lightbox"
+                title="App {{project.id}}"><span style="font-size:20px;"> Go Live</span></a>
+              <a href="{{project.get_absolute_url}}" title="More Details"><span style="font-size:20px;"> Show Detail</span> </a>
             </div>
           </div>
         </div>
