@@ -263,7 +263,7 @@
               <a href="{{post.get_absolute_url}}">
                 <h3>{{post.title}}</h3>
               </a>
-              <h4>{{post.auther}}</h4>
+              <h4>{{post.auther.first_name}} {{post.auther.last_name}}</h4>
             </div>
           </div><!-- End testimonial item -->
           {% endfor %}
